@@ -22,7 +22,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev --no-editable
 
 
-FROM python:3.13-alpine
+FROM python:3.13-bookworm
 # Copy the Python version
 
 COPY --from=builder --chown=python:python /python /python
