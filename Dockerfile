@@ -22,8 +22,9 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev --no-editable
 
 
-FROM gcr.io/distroless/cc
+FROM python:3.13-alpine
 # Copy the Python version
+
 COPY --from=builder --chown=python:python /python /python
 COPY --from=builder --chown=app:app /app /app
 
